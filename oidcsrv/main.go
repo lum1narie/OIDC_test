@@ -8,9 +8,21 @@ import (
 
 const (
 	PORT int = 50001
+	USER string = "user"
+	PASSWORD string = "password"
 )
 
+func authUser(c echo.Context) error {
+
+}
+
 func auth(c echo.Context) error {
+	// TODO:
+	return nil
+}
+
+func token(c echo.Context) error {
+	
 	// TODO:
 	return nil
 }
@@ -25,6 +37,7 @@ func main() {
 
 	// Routes
 	e.POST("/auth", auth)
+	e.POST("/token", token)
 
 	// Start server
 	e.Logger.Fatal(e.Start(fmt.Sprintf(":%d", PORT)))

@@ -8,6 +8,7 @@ import (
 
 const (
 	PORT int = 50000
+	OIDC_AUTH_URL string = "localhost:50001/auth"
 )
 
 func login(c echo.Context) error {
