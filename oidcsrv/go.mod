@@ -3,7 +3,7 @@ module sandbox/oidctest/oidcsrv
 go 1.16
 
 require (
-	github.com/davecgh/go-spew v1.1.1 // indirect
+	github.com/caos/oidc v1.0.0
 	github.com/labstack/echo/v4 v4.6.1
-	github.com/stretchr/testify v1.7.0 // indirect
+	gopkg.in/square/go-jose.v2 v2.6.0
 )

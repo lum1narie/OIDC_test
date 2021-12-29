@@ -11,8 +11,14 @@ const (
 	OIDC_AUTH_URL string = "localhost:50001/auth"
 )
 
+// XXX: ユーザーが連携を認めるものとして処理
+func confirmConnect() bool {
+	return true
+}
+
 func login(c echo.Context) error {
 	// TODO:
+
 	return nil
 }
 
