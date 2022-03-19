@@ -17,18 +17,21 @@ services:
   hydra-migrate:
     image: oryd/hydra:v1.10.6
     environment:
-      - DSN=mysql://root:secret@tcp(mysqld:3306)/mysql?max_conns=20&max_idle_conns=4
+      - DSN=mysql://root:secret@tcp(mysqld:3306)/hydra?max_conns=20&max_idle_conns=4
 
   hydra:
     image: oryd/hydra:v1.10.6
     environment:
-      - DSN=mysql://root:secret@tcp(mysqld:3306)/mysql?max_conns=20&max_idle_conns=4
+      - DSN=mysql://root:secret@tcp(mysqld:3306)/hydra?max_conns=20&max_idle_conns=4
 
   mysqld:
     image: mysql:5.7
     ports:
-      - "3306:3306"
+      - "5432:3306"
+    expose:
+      - "5432"
     environment:
       - MYSQL_ROOT_PASSWORD=secret
+      - MYSQL_DATABASE=hydra
     networks:
       - intranet

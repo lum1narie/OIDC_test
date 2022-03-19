@@ -2,7 +2,7 @@
 hydra-run:
 	cd oidcsrv && \
 	docker-compose -f quickstart.yml \
-	-f quickstart-postgres.yml \
+	-f quickstart-mysql.yml \
 	up --build
 
 .PHONY: hydra-client
@@ -19,7 +19,7 @@ hydra-client:
 hydra-down:
 	cd oidcsrv && \
 	docker-compose -f quickstart.yml \
-	-f quickstart-postgres.yml \
+	-f quickstart-mysql.yml \
 	down
 
 .PHONY: run
